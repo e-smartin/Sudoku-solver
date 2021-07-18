@@ -40,22 +40,6 @@ def print_sudoku(b):
         print(sudoku_row + "|")
     print(line)
 
-#def getMatrixPos(i,j):
-#    def retPos(a):
-#        if a %3 ==0:
-#            pos1 = a+1
-#            pos2 = a+2
-#        if a %3 ==1:
-#            pos1 = a-1 
-#            pos2 = a+1
-#        if a % 3 == 2:
-#            pos1 = a-2 
-#            pos2 = a-1
-#
-#        return [pos1,pos2]
-#    row1,row2 = retPos(i)
-#    col1,col2 = retPos(j)
-#    return [row1,row2,col1,col2]
 
 def solve_sudoku(b):
     solvable = True 
@@ -77,15 +61,6 @@ def solve_sudoku(b):
                 rmin, cmin = getMatrix(i,j)
                 matrix_3p3 = b[rmin:rmin+3, cmin:cmin+3]
                 matrix = np.concatenate((matrix_3p3[0],matrix_3p3[1],matrix_3p3[2]), axis = None)
-                #r1,r2,c1,c2 = getMatrixPos(i,j)
-                #rs = np.array([r1,r2,i]) #rows
-                #cs = np.array([c1,c2,j]) #cols
-                ##getMatrix
-                #matrix = np.empty([rs.size,cs.size], dtype = int)
-                #for s in range(rs.size):
-                #    for m in range(cs.size):
-                #        matrix[s,m] = b[rs[s],cs[m]]
-                #matrix = np.concatenate((matrix[0],matrix[1],matrix[2]), axis = None)
 
                 for num in range(1,10):
                     #num already in row,col or matrix
